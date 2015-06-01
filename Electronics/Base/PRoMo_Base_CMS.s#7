@@ -5429,7 +5429,7 @@ Source: http://www.ftdichip.com/Documents/DataSheets/DS_FT232R_v104.pdf</descrip
 <part name="PE16" library="supply1" deviceset="PE" device=""/>
 <part name="R23" library="Discrete" deviceset="R*" device="-0805"/>
 <part name="R24" library="Discrete" deviceset="R*" device="-0805"/>
-<part name="JP4" library="jumper" deviceset="JP2Q" device=""/>
+<part name="JP3" library="jumper" deviceset="JP2Q" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -5525,7 +5525,7 @@ A mettre au plus près du PIC</text>
 <instance part="PE16" gate="M" x="6.35" y="-46.99"/>
 <instance part="R23" gate="R" x="-17.78" y="-36.83"/>
 <instance part="R24" gate="R" x="2.54" y="-39.37" rot="R90"/>
-<instance part="JP4" gate="B1" x="-17.78" y="-30.48" rot="R270"/>
+<instance part="JP3" gate="B1" x="-17.78" y="-30.48" rot="MR270"/>
 </instances>
 <busses>
 </busses>
@@ -6009,33 +6009,6 @@ A mettre au plus près du PIC</text>
 <pinref part="J1" gate="G$1" pin="1"/>
 </segment>
 </net>
-<net name="LED_DEBUG1" class="0">
-<segment>
-<wire x1="165.1" y1="2.54" x2="165.1" y2="5.08" width="0.1524" layer="91"/>
-<label x="165.1" y="5.08" size="1.778" layer="95" rot="R90"/>
-<pinref part="J2" gate="G$1" pin="2"/>
-</segment>
-</net>
-<net name="LED_DEBUG2" class="0">
-<segment>
-<wire x1="180.34" y1="2.54" x2="180.34" y2="5.08" width="0.1524" layer="91"/>
-<label x="180.34" y="5.08" size="1.778" layer="95" rot="R90"/>
-<pinref part="J1" gate="G$1" pin="2"/>
-</segment>
-</net>
-<net name="BP_USER" class="0">
-<segment>
-<wire x1="226.06" y1="-13.97" x2="236.22" y2="-13.97" width="0.1524" layer="91"/>
-<wire x1="236.22" y1="-13.97" x2="243.84" y2="-13.97" width="0.1524" layer="91"/>
-<wire x1="236.22" y1="-10.16" x2="236.22" y2="-13.97" width="0.1524" layer="91"/>
-<junction x="236.22" y="-13.97"/>
-<label x="238.76" y="-13.97" size="1.778" layer="95"/>
-<pinref part="R4" gate="R" pin="1"/>
-<pinref part="BP_USER" gate="G$1" pin="A0"/>
-<pinref part="BP_USER" gate="G$1" pin="A1"/>
-<wire x1="226.06" y1="-31.75" x2="226.06" y2="-13.97" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="SENS3/RP9/RB9" class="0">
 <segment>
 <pinref part="IC1" gate="G$1" pin="SDA1/RP9/CN21/PMD3/RB9"/>
@@ -6205,7 +6178,7 @@ A mettre au plus près du PIC</text>
 <wire x1="-13.97" y1="-25.4" x2="-10.16" y2="-25.4" width="0.1524" layer="91"/>
 <wire x1="-10.16" y1="-25.4" x2="-10.16" y2="-30.48" width="0.1524" layer="91"/>
 <label x="-7.62" y="-30.48" size="1.778" layer="95"/>
-<pinref part="JP4" gate="B1" pin="2"/>
+<pinref part="JP3" gate="B1" pin="1"/>
 <junction x="-10.16" y="-30.48"/>
 </segment>
 </net>
@@ -6223,7 +6196,7 @@ A mettre au plus près du PIC</text>
 <pinref part="R23" gate="R" pin="2"/>
 <wire x1="-10.16" y1="-36.83" x2="-13.97" y2="-36.83" width="0.1524" layer="91"/>
 <label x="-7.62" y="-33.02" size="1.778" layer="95"/>
-<pinref part="JP4" gate="B1" pin="4"/>
+<pinref part="JP3" gate="B1" pin="3"/>
 <junction x="-10.16" y="-33.02"/>
 </segment>
 </net>
@@ -6476,6 +6449,11 @@ A mettre au plus près du PIC</text>
 <wire x1="60.96" y1="-45.72" x2="31.75" y2="-45.72" width="0.1524" layer="91"/>
 <label x="31.75" y="-45.72" size="1.778" layer="95"/>
 </segment>
+<segment>
+<wire x1="165.1" y1="2.54" x2="165.1" y2="5.08" width="0.1524" layer="91"/>
+<label x="165.1" y="5.08" size="1.778" layer="95" rot="R90"/>
+<pinref part="J2" gate="G$1" pin="2"/>
+</segment>
 </net>
 <net name="LED_DEBUG2/RA3" class="0">
 <segment>
@@ -6488,6 +6466,11 @@ A mettre au plus près du PIC</text>
 <wire x1="60.96" y1="-43.18" x2="31.75" y2="-43.18" width="0.1524" layer="91"/>
 <label x="31.75" y="-43.18" size="1.778" layer="95"/>
 </segment>
+<segment>
+<wire x1="180.34" y1="2.54" x2="180.34" y2="5.08" width="0.1524" layer="91"/>
+<label x="180.34" y="5.08" size="1.778" layer="95" rot="R90"/>
+<pinref part="J1" gate="G$1" pin="2"/>
+</segment>
 </net>
 <net name="BP_USER/RA8" class="0">
 <segment>
@@ -6499,6 +6482,17 @@ A mettre au plus près du PIC</text>
 <pinref part="JP1" gate="A" pin="20"/>
 <wire x1="60.96" y1="-40.64" x2="31.75" y2="-40.64" width="0.1524" layer="91"/>
 <label x="31.75" y="-40.64" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="226.06" y1="-13.97" x2="236.22" y2="-13.97" width="0.1524" layer="91"/>
+<wire x1="236.22" y1="-13.97" x2="243.84" y2="-13.97" width="0.1524" layer="91"/>
+<wire x1="236.22" y1="-10.16" x2="236.22" y2="-13.97" width="0.1524" layer="91"/>
+<junction x="236.22" y="-13.97"/>
+<label x="238.76" y="-13.97" size="1.778" layer="95"/>
+<pinref part="R4" gate="R" pin="1"/>
+<pinref part="BP_USER" gate="G$1" pin="A0"/>
+<pinref part="BP_USER" gate="G$1" pin="A1"/>
+<wire x1="226.06" y1="-31.75" x2="226.06" y2="-13.97" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="UART_BIS/RP20/RC4" class="0">
@@ -6532,7 +6526,7 @@ A mettre au plus près du PIC</text>
 <pinref part="R23" gate="R" pin="1"/>
 <wire x1="-21.59" y1="-36.83" x2="-25.4" y2="-36.83" width="0.1524" layer="91"/>
 <wire x1="-25.4" y1="-36.83" x2="-25.4" y2="-33.02" width="0.1524" layer="91"/>
-<pinref part="JP4" gate="B1" pin="3"/>
+<pinref part="JP3" gate="B1" pin="4"/>
 <junction x="-25.4" y="-33.02"/>
 </segment>
 </net>
@@ -6543,7 +6537,7 @@ A mettre au plus près du PIC</text>
 <wire x1="-25.4" y1="-30.48" x2="-25.4" y2="-25.4" width="0.1524" layer="91"/>
 <pinref part="R9" gate="R" pin="1"/>
 <wire x1="-25.4" y1="-25.4" x2="-21.59" y2="-25.4" width="0.1524" layer="91"/>
-<pinref part="JP4" gate="B1" pin="1"/>
+<pinref part="JP3" gate="B1" pin="2"/>
 <junction x="-25.4" y="-30.48"/>
 </segment>
 </net>

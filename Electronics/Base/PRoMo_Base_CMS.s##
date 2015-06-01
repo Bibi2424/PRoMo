@@ -5346,6 +5346,9 @@ Source: http://www.ftdichip.com/Documents/DataSheets/DS_FT232R_v104.pdf</descrip
 <part name="JP3" library="jumper" deviceset="JP2Q" device=""/>
 <part name="JP4" library="pinhead" deviceset="PINHD-1X6" device="/90"/>
 <part name="JP5" library="jumper" deviceset="JP3Q" device=""/>
+<part name="R13" library="Discrete" deviceset="R*" device="-0805" value="1M"/>
+<part name="PE17" library="supply1" deviceset="PE" device=""/>
+<part name="Q2" library="Discrete" deviceset="MOSFET-P" device="'SI2323CDS/SI2305DS&lt;BR&gt;'"/>
 </parts>
 <sheets>
 <sheet>
@@ -5441,6 +5444,9 @@ A mettre au plus près du PIC</text>
 <instance part="JP3" gate="B1" x="-17.78" y="-30.48" rot="MR270"/>
 <instance part="JP4" gate="A" x="-76.2" y="36.83" rot="R180"/>
 <instance part="JP5" gate="B" x="173.99" y="6.35"/>
+<instance part="R13" gate="R" x="-15.24" y="129.54"/>
+<instance part="PE17" gate="M" x="-5.08" y="129.54" rot="R90"/>
+<instance part="Q2" gate="MOS" x="-22.86" y="111.76" rot="R270"/>
 </instances>
 <busses>
 </busses>
@@ -5471,8 +5477,15 @@ A mettre au plus près du PIC</text>
 </segment>
 <segment>
 <pinref part="Q1" gate="MOS" pin="G"/>
-<wire x1="-22.86" y1="127" x2="-22.86" y2="132.08" width="0.1524" layer="91"/>
+<wire x1="-22.86" y1="127" x2="-22.86" y2="129.54" width="0.1524" layer="91"/>
 <label x="-22.86" y="129.54" size="1.778" layer="95" rot="R90"/>
+<pinref part="R13" gate="R" pin="1"/>
+<wire x1="-22.86" y1="129.54" x2="-22.86" y2="132.08" width="0.1524" layer="91"/>
+<wire x1="-19.05" y1="129.54" x2="-22.86" y2="129.54" width="0.1524" layer="91"/>
+<pinref part="Q2" gate="MOS" pin="G"/>
+<wire x1="-22.86" y1="116.84" x2="-26.67" y2="116.84" width="0.1524" layer="91"/>
+<wire x1="-26.67" y1="116.84" x2="-26.67" y2="129.54" width="0.1524" layer="91"/>
+<wire x1="-26.67" y1="129.54" x2="-22.86" y2="129.54" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="PE" class="0">
@@ -5659,6 +5672,11 @@ A mettre au plus près du PIC</text>
 <pinref part="R24" gate="R" pin="1"/>
 <wire x1="2.54" y1="-43.18" x2="2.54" y2="-44.45" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="R13" gate="R" pin="2"/>
+<pinref part="PE17" gate="M" pin="PE"/>
+<wire x1="-11.43" y1="129.54" x2="-7.62" y2="129.54" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="+5V" class="0">
 <segment>
@@ -5700,6 +5718,8 @@ A mettre au plus près du PIC</text>
 <pinref part="Q1" gate="MOS" pin="S"/>
 <wire x1="-17.78" y1="121.92" x2="-11.43" y2="121.92" width="0.1524" layer="91"/>
 <label x="-12.7" y="121.92" size="1.778" layer="95"/>
+<pinref part="Q2" gate="MOS" pin="D"/>
+<wire x1="-17.78" y1="111.76" x2="-17.78" y2="121.92" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="JP1" gate="A" pin="1"/>
@@ -6323,6 +6343,8 @@ A mettre au plus près du PIC</text>
 <label x="-49.53" y="121.92" size="1.778" layer="95"/>
 <pinref part="Q1" gate="MOS" pin="D"/>
 <wire x1="-54.61" y1="121.92" x2="-27.94" y2="121.92" width="0.1524" layer="91"/>
+<pinref part="Q2" gate="MOS" pin="S"/>
+<wire x1="-27.94" y1="111.76" x2="-27.94" y2="121.92" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="LED_DEBUG1/RA2" class="0">

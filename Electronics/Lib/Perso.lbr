@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.4">
+<eagle version="7.2.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -75,12 +75,12 @@
 <wire x1="0" y1="0" x2="0" y2="13.589" width="0.127" layer="21"/>
 <wire x1="19.939" y1="0" x2="19.939" y2="13.589" width="0.127" layer="21"/>
 <wire x1="19.939" y1="13.589" x2="0" y2="13.589" width="0.127" layer="21"/>
-<pad name="4" x="2.032" y="2.032" drill="1" diameter="1.9304"/>
-<pad name="3" x="2.032" y="5.207" drill="1" diameter="1.9304"/>
-<pad name="2" x="2.032" y="8.382" drill="1" diameter="1.9304"/>
-<pad name="1" x="2.032" y="11.557" drill="1" diameter="1.9304"/>
-<pad name="5" x="18.161" y="1.7018" drill="1" diameter="1.9304"/>
-<pad name="6" x="17.907" y="11.5062" drill="1" diameter="1.9304"/>
+<pad name="4" x="2.032" y="2.032" drill="1.1" diameter="2.1844"/>
+<pad name="3" x="2.032" y="5.207" drill="1.1" diameter="2.1844"/>
+<pad name="2" x="2.032" y="8.382" drill="1.1" diameter="2.1844"/>
+<pad name="1" x="2.032" y="11.557" drill="1.1" diameter="2.1844"/>
+<pad name="5" x="18.161" y="1.7018" drill="1.1" diameter="2.1844"/>
+<pad name="6" x="17.907" y="11.5062" drill="1.1" diameter="2.1844"/>
 <text x="10.16" y="5.842" size="1.016" layer="21" align="bottom-center">PTH08000W
 TROUGH HOLE</text>
 </package>
