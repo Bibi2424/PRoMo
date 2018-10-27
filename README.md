@@ -1,13 +1,9 @@
-PRoMo
-=====
-###"Plateforme pour la Robotique Mobile"
 
-#####Mobile Robotic Plateform
------
+# PRoMo
 
-Author : DIB Guillaume
+## "Plateforme pour la Robotique Mobile"
 
-Beginning date : 09/2013
+### Mobile Robotic Plateform
 
 This project is about creating a mobile robot from scratch.
 There are four malor parts in this project :
@@ -16,14 +12,15 @@ There are four malor parts in this project :
 			The different components must be build with Laser cutting and 3D printing
 			(from low cost websites).
 			
-- Electronics : Create a main board based on a dsPIC33F microcontroller and several 
+- Electronics : Create a main board based on a STM32F4 microcontroller and several 
 			shields to interface with many components like motors, sensors, actuators,
 			RF transmitters...
 			
-- Embedded software : Propose a basic template for the microcontroller and many
-			librairies to easily control the robot.
+- Firmware : This can go two ways:
+	- Provide a sets of high level librairies for controlling a sets of sensors and actuators and example projects, 
+	- Give the code as is but with a performant way of interfacing with it (serial communication)
 
-- Documentation : All the information to understand the project will be there, with some
+- Documentation : All the informations to understand the project will be there, with some
 			tutorials.
 			
 The aim of this projects is to propose some basics to start mobile robotic for the beginners
