@@ -12,8 +12,8 @@ int _write(int file, char *data, int len)
 
    int i = 0;
    for(i = 0; i < len; i++) {
-      LL_USART_TransmitData8(USART2, data[i]);
-      while(!LL_USART_IsActiveFlag_TXE(USART2));
+      LL_USART_TransmitData8(USART6, data[i]);
+      while(!LL_USART_IsActiveFlag_TXE(USART6));
    }
    return i;
 }

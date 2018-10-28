@@ -1,12 +1,11 @@
-#include <stdio.h>
 #include "main.h"
 #include "usart.h"
 #include "gpio.h"
 #include "encoder.h"
+#include "motor.h"
 
 static void LL_Init(void);
 void SystemClock_Config(void);
-
 
 /******************************************************************************/
 /* IO Mapping on Nucleo 				                                   	  */
@@ -17,25 +16,27 @@ void SystemClock_Config(void);
 /* PC13, N/A - BP						                                   	  */
 /******************************************************************************/
 
-int main(void) {
+uint32_t duty_cycle_percent = 0;
 
+int main(void) {
 	LL_Init();
 	SystemClock_Config();
 
 	MX_GPIO_Init();
-	MX_USART2_UART_Init();
+	MX_USART6_UART_Init();
+	printf("Boot..\r\n");
 
 	TIM3_Encoder_Init();
+	TIM2_Motor_Init();
 
-	uint16_t i = 0;
+	printf("Init Done\r\n");
 	while (1) {
-		printf("Hello World: %u\r\n", i++);
 		printf("Left - [Speed: %u, Dir:%u]\r\n", encoder_left_get_value(), READ_BIT(TIM3->CR1, TIM_CR1_DIR)==TIM_CR1_DIR);
 		printf("Right -[Speed: %u, Dir:%u]\r\n", encoder_right_get_value(), READ_BIT(TIM4->CR1, TIM_CR1_DIR)==TIM_CR1_DIR);
-		LL_mDelay(500);
-		LL_GPIO_SetOutputPin(LD2_GPIO_Port, LL_GPIO_PIN_5);
-		LL_mDelay(500);
-		LL_GPIO_ResetOutputPin(LD2_GPIO_Port, LL_GPIO_PIN_5);
+		LL_mDelay(250);
+		LL_GPIO_SetOutputPin(LD2_GPIO_Port, LD2_Pin);
+		LL_mDelay(250);
+		LL_GPIO_ResetOutputPin(LD2_GPIO_Port, LD2_Pin);
 
 	}
 }
@@ -47,20 +48,13 @@ static void LL_Init(void) {
 
 	NVIC_SetPriorityGrouping(NVIC_PRIORITYGROUP_4);
 	/* System interrupt init*/
-	/* MemoryManagement_IRQn interrupt configuration */
-	NVIC_SetPriority(MemoryManagement_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(),0, 0));
-	/* BusFault_IRQn interrupt configuration */
-	NVIC_SetPriority(BusFault_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(),0, 0));
-	/* UsageFault_IRQn interrupt configuration */
-	NVIC_SetPriority(UsageFault_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(),0, 0));
-	/* SVCall_IRQn interrupt configuration */
-	NVIC_SetPriority(SVCall_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(),0, 0));
-	/* DebugMonitor_IRQn interrupt configuration */
-	NVIC_SetPriority(DebugMonitor_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(),0, 0));
-	/* PendSV_IRQn interrupt configuration */
-	NVIC_SetPriority(PendSV_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(),0, 0));
-	/* SysTick_IRQn interrupt configuration */
-	NVIC_SetPriority(SysTick_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(),0, 0));
+	NVIC_SetPriority(MemoryManagement_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(),0, 0));	/* MemoryManagement_IRQn interrupt configuration */
+	NVIC_SetPriority(BusFault_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(),0, 0));			/* BusFault_IRQn interrupt configuration */
+	NVIC_SetPriority(UsageFault_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(),0, 0));		/* UsageFault_IRQn interrupt configuration */
+	NVIC_SetPriority(SVCall_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(),0, 0));			/* SVCall_IRQn interrupt configuration */
+	NVIC_SetPriority(DebugMonitor_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(),0, 0));		/* DebugMonitor_IRQn interrupt configuration */
+	NVIC_SetPriority(PendSV_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(),0, 0));			/* PendSV_IRQn interrupt configuration */
+	NVIC_SetPriority(SysTick_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(),0, 0));			/* SysTick_IRQn interrupt configuration */
 }
 
 
@@ -93,7 +87,16 @@ void SystemClock_Config(void) {
 }
 
 
-void _Error_Handler(char *file, int line) {
+extern void UserButton_Callback(void) {
+	duty_cycle_percent += 10;
+	if(duty_cycle_percent > 100) { duty_cycle_percent = 0; } 
+	motor_right_set_speed(duty_cycle_percent);
+	motor_left_set_speed(duty_cycle_percent);
+	// printf("Press, new DC: %lu\n", duty_cycle_percent);
+}
+
+
+extern void _Error_Handler(char *file, int line) {
 	while(1) {}
 }
 

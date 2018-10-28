@@ -49,6 +49,7 @@ Src/gpio.c \
 Src/usart.c \
 Src/syscalls.c \
 Src/encoder.c \
+Src/motor.c \
 C:/Users/Bibi/STM32Cube/Repository/STM32Cube_FW_F4_V1.21.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_gpio.c \
 C:/Users/Bibi/STM32Cube/Repository/STM32Cube_FW_F4_V1.21.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usart.c \
 C:/Users/Bibi/STM32Cube/Repository/STM32Cube_FW_F4_V1.21.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_tim.c \
