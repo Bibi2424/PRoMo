@@ -50,6 +50,7 @@ Src/usart.c \
 Src/syscalls.c \
 Src/encoder.c \
 Src/motor.c \
+Src/process_serial_commands.c \
 C:/Users/Bibi/STM32Cube/Repository/STM32Cube_FW_F4_V1.21.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_gpio.c \
 C:/Users/Bibi/STM32Cube/Repository/STM32Cube_FW_F4_V1.21.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usart.c \
 C:/Users/Bibi/STM32Cube/Repository/STM32Cube_FW_F4_V1.21.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_tim.c \
@@ -169,20 +170,27 @@ OBJECTS += $(addprefix $(BUILD_DIR)/,$(notdir $(ASM_SOURCES:.s=.o)))
 vpath %.s $(sort $(dir $(ASM_SOURCES)))
 
 $(BUILD_DIR)/%.o: %.c Makefile | $(BUILD_DIR) 
-	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	@echo "   [CC]" $<
+	@$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
 
 $(BUILD_DIR)/%.o: %.s Makefile | $(BUILD_DIR)
-	$(AS) -c $(CFLAGS) $< -o $@
+	@echo "   [AS]" $<
+	@$(AS) -c $(CFLAGS) $< -o $@
 
 $(BUILD_DIR)/$(TARGET).elf: $(OBJECTS) Makefile
-	$(CC) $(OBJECTS) $(LDFLAGS) -o $@
-	$(SZ) $@
+	@echo "   [LD]" $@
+	@$(CC) $(OBJECTS) $(LDFLAGS) -o $@
+	@echo "   [SIZE]"
+	@$(SZ) $@
+	@echo ""
 
 $(BUILD_DIR)/%.hex: $(BUILD_DIR)/%.elf | $(BUILD_DIR)
-	$(HEX) $< $@
+	@echo "   [CP]" $@
+	@$(HEX) $< $@
 	
 $(BUILD_DIR)/%.bin: $(BUILD_DIR)/%.elf | $(BUILD_DIR)
-	$(BIN) $< $@	
+	@echo "   [CP]" $@
+	@$(BIN) $< $@	
 	
 $(BUILD_DIR):
 	mkdir $@		
@@ -197,8 +205,8 @@ clean:
 # flash
 #######################################
 # flash: all
-flash: 
-	$(STM32_FLASHER_EXEC)ST-LINK_CLI.exe -c -P $(BUILD_DIR)/$(TARGET).hex 0x08000000 -Rst
+flash: $(BUILD_DIR)/$(TARGET).hex | $(BUILD_DIR)
+	@$(STM32_FLASHER_EXEC)ST-LINK_CLI.exe -c -P $< 0x08000000 -Rst
 
 #######################################
 # dependencies

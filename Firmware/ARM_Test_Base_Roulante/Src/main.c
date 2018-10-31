@@ -9,9 +9,11 @@ void SystemClock_Config(void);
 
 /******************************************************************************/
 /* IO Mapping on Nucleo 				                                   	  */
-/* PA2/PA3, D0/D1 - USART2 RX/TX				                           	  */
+/* PA11/PA12, NA/NA - USART6 RX/TX				                           	  */
 /* PA6/PA7, D11/D12 - RightEncoder A/B, TIM3 CH1/CH2                      	  */
-/* PB6/PB7, D10/N/A - LeftEncoder  A/B, TIM4 CH1/CH2                      	  */
+/* PB6/PB7, D10/NA - LeftEncoder  A/B, TIM4 CH1/CH2                      	  */
+/* PA0/P1, A0/A1 - Right Motor AIN1/AIN2, TIM2 CH1/CH2                     	  */
+/* PA2/P3, D0/D1 - Right Motor BIN1/BIN2, TIM2 CH3/CH4                     	  */
 /* PA5, D13 - LED 						                                   	  */
 /* PC13, N/A - BP						                                   	  */
 /******************************************************************************/
@@ -24,6 +26,7 @@ int main(void) {
 
 	MX_GPIO_Init();
 	MX_USART6_UART_Init();
+	setbuf(stdout, NULL); 		//! For unbuffered ouput
 	printf("Boot..\r\n");
 
 	TIM3_Encoder_Init();
@@ -31,8 +34,8 @@ int main(void) {
 
 	printf("Init Done\r\n");
 	while (1) {
-		printf("Left - [Speed: %u, Dir:%u]\r\n", encoder_left_get_value(), READ_BIT(TIM3->CR1, TIM_CR1_DIR)==TIM_CR1_DIR);
-		printf("Right -[Speed: %u, Dir:%u]\r\n", encoder_right_get_value(), READ_BIT(TIM4->CR1, TIM_CR1_DIR)==TIM_CR1_DIR);
+		// printf("Left - [Speed: %u, Dir:%u]\r\n", encoder_left_get_value(), READ_BIT(TIM3->CR1, TIM_CR1_DIR)==TIM_CR1_DIR);
+		// printf("Right -[Speed: %u, Dir:%u]\r\n", encoder_right_get_value(), READ_BIT(TIM4->CR1, TIM_CR1_DIR)==TIM_CR1_DIR);
 		LL_mDelay(250);
 		LL_GPIO_SetOutputPin(LD2_GPIO_Port, LD2_Pin);
 		LL_mDelay(250);

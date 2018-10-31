@@ -7,9 +7,6 @@
 /* STM32F4xx Peripheral Interrupt Handlers                                    */
 /* please refer to the startup file (startup_stm32f4xx.s).                    */
 /******************************************************************************/
-void USART2_IRQHandler(void) {
-
-}
 
 /******************************************************************************/
 /*            Cortex-M4 Processor Interruption and Exception Handlers         */ 

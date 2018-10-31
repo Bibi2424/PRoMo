@@ -1,19 +1,22 @@
-#include  <errno.h>
-#include  <sys/unistd.h> // STDOUT_FILENO, STDERR_FILENO
+#include <errno.h>
+#include <stdio.h>
+#include <sys/unistd.h> // STDOUT_FILENO, STDERR_FILENO
 #include "stm32f4xx_ll_usart.h"
 
-int _write(int file, char *data, int len)
-{
-   if ((file != STDOUT_FILENO) && (file != STDERR_FILENO))
-   {
+
+int _write (int fd, const void *buf, size_t count);
+int _write (int fd, const void *buf, size_t count) {
+   if ((fd != STDOUT_FILENO) && (fd != STDERR_FILENO)) {
       errno = EBADF;
       return -1;
    }
-
-   int i = 0;
-   for(i = 0; i < len; i++) {
-      LL_USART_TransmitData8(USART6, data[i]);
+   // size_t i;
+   uint8_t* ch = ((uint8_t*)buf);
+   for(size_t i = 0; i < count; i++){
+      // while(!LL_USART_IsActiveFlag_TXE(USART6));   
+      LL_USART_TransmitData8(USART6, *ch++);
       while(!LL_USART_IsActiveFlag_TXE(USART6));
    }
-   return i;
+   return count;
 }
+

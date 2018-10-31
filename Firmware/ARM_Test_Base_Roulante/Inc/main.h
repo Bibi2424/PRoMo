@@ -62,6 +62,9 @@
 #define NVIC_PRIORITYGROUP_4         ((uint32_t)0x00000003) /*!< 4 bits for pre-emption priority, 0 bit  for subpriority */                                                                 
 #endif
 
+#define TRUE 	1
+#define FALSE 	0
+
 //! NOTE Comment/Uncomment the line below to expanse the "assert_param" macro in the HAL drivers code
 #define USE_FULL_ASSERT    1U 
 
