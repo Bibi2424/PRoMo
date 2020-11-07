@@ -223,74 +223,57 @@ Wire Wire Line
 	3700 2800 3700 2950
 Connection ~ 3700 2950
 $Comp
-L Device:Crystal Y1
-U 1 1 5F94B04F
-P 4200 3900
-F 0 "Y1" V 4100 4050 50  0000 L CNN
-F 1 "Crystal 25MHz" V 4200 4050 50  0000 L CNN
-F 2 "Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm_HandSoldering" H 4200 3900 50  0001 C CNN
-F 3 "~" H 4200 3900 50  0001 C CNN
-F 4 "C9006" V 4200 3900 50  0001 C CNN "LCSC"
-F 5 "Basic" H 4200 3900 50  0001 C CNN "Catalog"
-	1    4200 3900
-	0    1    1    0   
-$EndComp
-$Comp
 L Device:C_Small C2
 U 1 1 5F951E54
-P 3850 3750
-F 0 "C2" V 3750 3750 50  0000 C CNN
-F 1 "18pF" V 3950 3750 50  0000 C CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3850 3750 50  0001 C CNN
-F 3 "~" H 3850 3750 50  0001 C CNN
-F 4 "C1797" V 3850 3750 50  0001 C CNN "LCSC"
-F 5 "Basic" H 3850 3750 50  0001 C CNN "Catalog"
-	1    3850 3750
+P 3250 3750
+F 0 "C2" V 3150 3750 50  0000 C CNN
+F 1 "18pF" V 3350 3750 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3250 3750 50  0001 C CNN
+F 3 "~" H 3250 3750 50  0001 C CNN
+F 4 "C1797" V 3250 3750 50  0001 C CNN "LCSC"
+F 5 "Basic" H 3250 3750 50  0001 C CNN "Catalog"
+	1    3250 3750
 	0    1    1    0   
 $EndComp
 $Comp
 L Device:C_Small C3
 U 1 1 5F952F88
-P 3850 4050
-F 0 "C3" V 3750 4050 50  0000 C CNN
-F 1 "18pF" V 3950 4050 50  0000 C CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3850 4050 50  0001 C CNN
-F 3 "~" H 3850 4050 50  0001 C CNN
-F 4 "C1797" V 3850 4050 50  0001 C CNN "LCSC"
-F 5 "Basic" H 3850 4050 50  0001 C CNN "Catalog"
-	1    3850 4050
+P 3250 4050
+F 0 "C3" V 3150 4050 50  0000 C CNN
+F 1 "18pF" V 3350 4050 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3250 4050 50  0001 C CNN
+F 3 "~" H 3250 4050 50  0001 C CNN
+F 4 "C1797" V 3250 4050 50  0001 C CNN "LCSC"
+F 5 "Basic" H 3250 4050 50  0001 C CNN "Catalog"
+	1    3250 4050
 	0    1    1    0   
 $EndComp
 $Comp
 L power:GND #PWR025
 U 1 1 5F9538D3
-P 3650 3750
-F 0 "#PWR025" H 3650 3500 50  0001 C CNN
-F 1 "GND" H 3655 3577 50  0000 C CNN
-F 2 "" H 3650 3750 50  0001 C CNN
-F 3 "" H 3650 3750 50  0001 C CNN
-	1    3650 3750
+P 3050 3750
+F 0 "#PWR025" H 3050 3500 50  0001 C CNN
+F 1 "GND" H 3055 3577 50  0000 C CNN
+F 2 "" H 3050 3750 50  0001 C CNN
+F 3 "" H 3050 3750 50  0001 C CNN
+	1    3050 3750
 	0    1    1    0   
 $EndComp
 $Comp
 L power:GND #PWR026
 U 1 1 5F9540D0
-P 3650 4050
-F 0 "#PWR026" H 3650 3800 50  0001 C CNN
-F 1 "GND" H 3655 3877 50  0000 C CNN
-F 2 "" H 3650 4050 50  0001 C CNN
-F 3 "" H 3650 4050 50  0001 C CNN
-	1    3650 4050
+P 3050 4050
+F 0 "#PWR026" H 3050 3800 50  0001 C CNN
+F 1 "GND" H 3055 3877 50  0000 C CNN
+F 2 "" H 3050 4050 50  0001 C CNN
+F 3 "" H 3050 4050 50  0001 C CNN
+	1    3050 4050
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	3650 3750 3750 3750
+	3050 3750 3150 3750
 Wire Wire Line
-	3650 4050 3750 4050
-Wire Wire Line
-	3950 3750 4200 3750
-Wire Wire Line
-	3950 4050 4200 4050
+	3050 4050 3150 4050
 $Comp
 L Device:R_Small R11
 U 1 1 5F95A217
@@ -1129,7 +1112,7 @@ L Device:R_Small R13
 U 1 1 619CE375
 P 5600 7650
 F 0 "R13" V 5500 7650 50  0000 C CNN
-F 1 "47" V 5600 7650 50  0000 C CNN
+F 1 "47R" V 5600 7650 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5600 7650 50  0001 C CNN
 F 3 "~" H 5600 7650 50  0001 C CNN
 F 4 "C17714" V 5600 7650 50  0001 C CNN "LCSC"
@@ -1176,7 +1159,7 @@ L Device:R_Small R12
 U 1 1 618FA37C
 P 5600 7300
 F 0 "R12" V 5500 7300 50  0000 C CNN
-F 1 "47" V 5600 7300 50  0000 C CNN
+F 1 "47R" V 5600 7300 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5600 7300 50  0001 C CNN
 F 3 "~" H 5600 7300 50  0001 C CNN
 F 4 "C17714" V 5600 7300 50  0001 C CNN "LCSC"
@@ -1854,7 +1837,7 @@ $EndComp
 Text Notes 14650 7300 0    100  ~ 0
 DONE:\n - MCU:\n    - Power\n    - BOOT\n    - Crystal\n    - Reset\n    - Programming\n - Power convertion\n    - Power LED\n - NRF24\n - VL53L0X\n - FTDI\n - DRV8833\n - Encoder\n - MPU6050\n - Add user button\n - Add user led(s)\n - Add connector for battery\n - Add connector for expansion:\n    - I2C\n    - SPI (master/slave?)\n    - UART\n    - Servo\n    - Analog\n    - GPIO\n - Addressable LED\n - Move to different sheets\n - Make schematic compatible with f4x1, f405
 Text Notes 14650 2450 0    100  ~ 0
-TODO:\n - Add test points or solder joint where not sure\n - Change NRF24L01 Breackout foortprint\n\n\n\n - IR?\n    - Proto Space?
+TODO:\n - Add test points or solder joint where not sure\n - Battery monitoring (bridge divider to ADC pin)\n - Power multiplexer (ex: TPS2113A)\n\n\n\n - IR?\n    - Proto Space?
 NoConn ~ 10400 3400
 NoConn ~ 10400 3000
 $Comp
@@ -2272,15 +2255,9 @@ Wire Wire Line
 Wire Wire Line
 	1250 7000 1450 7000
 Wire Wire Line
-	5150 3750 4200 3750
-Connection ~ 4200 3750
-Wire Wire Line
-	4200 4050 4400 4050
-Wire Wire Line
 	4400 4050 4400 3850
 Wire Wire Line
 	4400 3850 5150 3850
-Connection ~ 4200 4050
 Wire Wire Line
 	4900 3050 4900 3150
 Connection ~ 4900 3050
@@ -2522,4 +2499,49 @@ Wire Wire Line
 	4000 7000 3850 7000
 Wire Wire Line
 	3150 7000 3350 7000
+$Comp
+L Device:Crystal_GND24 Y1
+U 1 1 5FBE019F
+P 3750 3900
+F 0 "Y1" V 3704 4144 50  0000 L CNN
+F 1 "Crystal_GND24" V 3795 4144 50  0000 L CNN
+F 2 "Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm_HandSoldering" H 3750 3900 50  0001 C CNN
+F 3 "~" H 3750 3900 50  0001 C CNN
+F 4 "C9006" H 3750 3900 50  0001 C CNN "LCSC"
+F 5 "Basic" H 3750 3900 50  0001 C CNN "Catalog"
+	1    3750 3900
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3350 3750 3750 3750
+Wire Wire Line
+	3350 4050 3750 4050
+Connection ~ 3750 3750
+Connection ~ 3750 4050
+Wire Wire Line
+	3750 3750 5150 3750
+Wire Wire Line
+	3750 4050 4400 4050
+$Comp
+L power:GND #PWR071
+U 1 1 5FC396B9
+P 3550 3900
+F 0 "#PWR071" H 3550 3650 50  0001 C CNN
+F 1 "GND" H 3555 3727 50  0000 C CNN
+F 2 "" H 3550 3900 50  0001 C CNN
+F 3 "" H 3550 3900 50  0001 C CNN
+	1    3550 3900
+	0    1    -1   0   
+$EndComp
+$Comp
+L power:GND #PWR072
+U 1 1 5FCCAFA8
+P 3950 3900
+F 0 "#PWR072" H 3950 3650 50  0001 C CNN
+F 1 "GND" H 3955 3727 50  0000 C CNN
+F 2 "" H 3950 3900 50  0001 C CNN
+F 3 "" H 3950 3900 50  0001 C CNN
+	1    3950 3900
+	0    -1   1    0   
+$EndComp
 $EndSCHEMATC

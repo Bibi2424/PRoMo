@@ -1,3 +1,7 @@
 build
 
 Electronics/Unused/
+
+*.sch-bak
+
+*.kicad_pcb-bak

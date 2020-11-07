@@ -630,19 +630,6 @@ F 3 "~" H 1200 4000 50  0001 C CNN
 $EndComp
 $Comp
 L LED:SK6812 D?
-U 1 1 607EFA9A
-P 4550 4350
-AR Path="/607EFA9A" Ref="D?"  Part="1" 
-AR Path="/5F9D91BE/607EFA9A" Ref="D10"  Part="1" 
-F 0 "D10" H 4894 4396 50  0000 L CNN
-F 1 "SK6812" H 4894 4305 50  0000 L CNN
-F 2 "LED_SMD:LED_SK6812_PLCC4_5.0x5.0mm_P3.2mm" H 4600 4050 50  0001 L TNN
-F 3 "https://cdn-shop.adafruit.com/product-files/1138/SK6812+LED+datasheet+.pdf" H 4650 3975 50  0001 L TNN
-	1    4550 4350
-	1    0    0    -1  
-$EndComp
-$Comp
-L LED:SK6812 D?
 U 1 1 607EFA85
 P 3550 4350
 AR Path="/607EFA85" Ref="D?"  Part="1" 
@@ -662,7 +649,7 @@ AR Path="/607EFA7A" Ref="D?"  Part="1"
 AR Path="/5F9D91BE/607EFA7A" Ref="D3"  Part="1" 
 F 0 "D3" V 1596 3782 50  0000 R CNN
 F 1 "M7" V 1505 3782 50  0000 R CNN
-F 2 "Diode_SMD:D_SMA_Handsoldering" V 1550 3850 50  0001 C CNN
+F 2 "Diode_SMD:D_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 1550 3850 50  0001 C CNN
 F 3 "~" V 1550 3850 50  0001 C CNN
 F 4 "" V 1550 3850 50  0001 C CNN "LCSC"
 	1    1550 3850
@@ -820,6 +807,8 @@ F 0 "U6" H 8900 4000 50  0000 C CNN
 F 1 "MPU-6050" H 9550 2800 50  0000 C CNN
 F 2 "Sensor_Motion:InvenSense_QFN-24_4x4mm_P0.5mm" H 9250 2600 50  0001 C CNN
 F 3 "https://store.invensense.com/datasheets/invensense/MPU-6050_DataSheet_V3%204.pdf" H 9250 3250 50  0001 C CNN
+F 4 "C24112" H 9250 3400 50  0001 C CNN "LCSC"
+F 5 "Basic" H 9250 3400 50  0001 C CNN "Catalog"
 	1    9250 3400
 	1    0    0    -1  
 $EndComp
@@ -888,4 +877,30 @@ Wire Wire Line
 	5600 1500 5600 2200
 Wire Wire Line
 	4300 1500 4300 2200
+$Comp
+L Connector:TestPoint TP7
+U 1 1 5FE785F7
+P 5300 4350
+F 0 "TP7" V 5254 4538 50  0000 L CNN
+F 1 "TestPoint" V 5345 4538 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_D1.5mm" H 5500 4350 50  0001 C CNN
+F 3 "~" H 5500 4350 50  0001 C CNN
+	1    5300 4350
+	0    1    1    0   
+$EndComp
+$Comp
+L LED:SK6812 D?
+U 1 1 607EFA9A
+P 4550 4350
+AR Path="/607EFA9A" Ref="D?"  Part="1" 
+AR Path="/5F9D91BE/607EFA9A" Ref="D10"  Part="1" 
+F 0 "D10" H 4894 4396 50  0000 L CNN
+F 1 "SK6812" H 4894 4305 50  0000 L CNN
+F 2 "LED_SMD:LED_SK6812_PLCC4_5.0x5.0mm_P3.2mm" H 4600 4050 50  0001 L TNN
+F 3 "https://cdn-shop.adafruit.com/product-files/1138/SK6812+LED+datasheet+.pdf" H 4650 3975 50  0001 L TNN
+	1    4550 4350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4850 4350 5300 4350
 $EndSCHEMATC
