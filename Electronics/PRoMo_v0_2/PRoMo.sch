@@ -2546,7 +2546,7 @@ Wire Wire Line
 Text GLabel 10300 2300 0    50   Input ~ 0
 NRST
 Text Notes 14550 3100 0    100  ~ 0
-TODO:\n - Change Button footprint\n - Add diode between power levels\n - Less bright LEDs\n - Move TIM2 away from PA15 (default state high)\n - Move Mot/Coder header to the side of th motors (with mirrored orientation)\n - Add 2 ALED in front and move button\n - Add 1/2 ALED in the back\n - Wider holes for battery\n - Better positions for standoffs\n - Maybe change aux header layout\n\n - Battery monitoring (bridge divider to ADC pin)\n - Power multiplexer (ex: TPS2113A) ???\n - Add test points or solder joint where not sure\n\n
+TODO:\n - Change Button footprint\n - Add diode between power levels\n - Investigate why VBAT in back driven from 5V/3V3?\n - Less bright LEDs\n - Move TIM2 away from PA15 (default state high)\n - Move Mot/Coder header to the side of th motors (with mirrored orientation)\n - Add 2 ALED in front and move button\n - Add 1/2 ALED in the back\n - Wider holes for battery\n - Better positions for standoffs\n - Maybe change aux header layout\n\n - Battery monitoring (bridge divider to ADC pin)\n - Power multiplexer (ex: TPS2113A) ???\n - Add test points or solder joint where not sure\n\n
 Text Notes 14550 3950 0    100  ~ 0
-DONE:\n - Separate Shield and Ground from USB connector
+DONE:\n - Add a jumper for motor power\n - Separate Shield and Ground from USB connector
 $EndSCHEMATC

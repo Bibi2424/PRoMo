@@ -31,35 +31,35 @@ $EndComp
 $Comp
 L Device:R_Small R?
 U 1 1 5F9E817E
-P 4450 2850
+P 4450 2300
 AR Path="/5F9E817E" Ref="R?"  Part="1" 
 AR Path="/5F9DA82B/5F9E817E" Ref="R20"  Part="1" 
-F 0 "R20" H 4509 2896 50  0000 L CNN
-F 1 "47k" H 4509 2805 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 4450 2850 50  0001 C CNN
-F 3 "~" H 4450 2850 50  0001 C CNN
-F 4 "C17713" H 4450 2850 50  0001 C CNN "LCSC"
-F 5 "Basic" H 4450 2850 50  0001 C CNN "Catalog"
-	1    4450 2850
+F 0 "R20" H 4509 2346 50  0000 L CNN
+F 1 "47k" H 4509 2255 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 4450 2300 50  0001 C CNN
+F 3 "~" H 4450 2300 50  0001 C CNN
+F 4 "C17713" H 4450 2300 50  0001 C CNN "LCSC"
+F 5 "Basic" H 4450 2300 50  0001 C CNN "Catalog"
+	1    4450 2300
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:+3V3 #PWR?
 U 1 1 5F9E8184
-P 4450 2650
+P 4450 2100
 AR Path="/5F9E8184" Ref="#PWR?"  Part="1" 
 AR Path="/5F9DA82B/5F9E8184" Ref="#PWR096"  Part="1" 
-F 0 "#PWR096" H 4450 2500 50  0001 C CNN
-F 1 "+3V3" H 4465 2823 50  0000 C CNN
-F 2 "" H 4450 2650 50  0001 C CNN
-F 3 "" H 4450 2650 50  0001 C CNN
-	1    4450 2650
+F 0 "#PWR096" H 4450 1950 50  0001 C CNN
+F 1 "+3V3" H 4465 2273 50  0000 C CNN
+F 2 "" H 4450 2100 50  0001 C CNN
+F 3 "" H 4450 2100 50  0001 C CNN
+	1    4450 2100
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4450 2650 4450 2750
+	4450 2100 4450 2200
 Wire Wire Line
-	4450 2950 4450 3050
+	4450 2400 4450 2500
 Wire Wire Line
 	4450 3150 4550 3150
 $Comp
@@ -229,7 +229,7 @@ Text GLabel 4250 3850 0    50   Input ~ 0
 MR_PWM_H
 Text GLabel 4250 3950 0    50   Input ~ 0
 MR_PWM_L
-Text Label 4700 2350 2    50   ~ 0
+Text Label 3250 2100 2    50   ~ 0
 VM
 Wire Wire Line
 	5750 3450 5950 3450
@@ -352,10 +352,10 @@ Wire Wire Line
 Wire Wire Line
 	5150 4300 5150 4250
 Connection ~ 5100 4300
-Text GLabel 4200 2350 0    50   Input ~ 0
+Text GLabel 2750 2100 0    50   Input ~ 0
 VBAT
 Wire Wire Line
-	4200 2350 4700 2350
+	2750 2100 3250 2100
 NoConn ~ 5950 3450
 $Comp
 L Connector_Generic:Conn_01x06 J16
@@ -428,11 +428,24 @@ Wire Wire Line
 	3550 3200 3550 3350
 Wire Wire Line
 	3550 3450 3550 3600
-Text GLabel 4250 3050 0    50   Input ~ 0
+Text GLabel 4250 2500 0    50   Input ~ 0
 NRST
 Wire Wire Line
-	4250 3050 4450 3050
-Connection ~ 4450 3050
+	4250 2500 4450 2500
+$Comp
+L Connector_Generic:Conn_01x02 J25
+U 1 1 602EE7A8
+P 4250 2900
+F 0 "J25" H 4150 2700 50  0000 C CNN
+F 1 "Motor_power" H 4450 2700 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 4250 2900 50  0001 C CNN
+F 3 "~" H 4250 2900 50  0001 C CNN
+	1    4250 2900
+	-1   0    0    1   
+$EndComp
 Wire Wire Line
-	4450 3050 4450 3150
+	4450 3150 4450 2900
+Wire Wire Line
+	4450 2800 4450 2500
+Connection ~ 4450 2500
 $EndSCHEMATC
