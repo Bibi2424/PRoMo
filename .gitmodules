@@ -1,0 +1,3 @@
+[submodule "Firmware"]
+	path = Firmware
+	url = git@github.com:Bibi2424/PRoMo_Firmware.git
